@@ -3,11 +3,11 @@ Implementation of typed list covered by unit tests
 
 # Variant
 
-I didn't found my record book, so I took my number in class list: 10 
+I didn't found my record book, so I took my number in class list: 10 <br>
 10 % 4 = 2
 
-2 variant:
-First implementation - array based list
+2 variant:<br>
+First implementation - array based list<br>
 Second implementation - circular linked list
 
 ## Setup
