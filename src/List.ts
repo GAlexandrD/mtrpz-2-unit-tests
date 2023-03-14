@@ -92,7 +92,7 @@ export class List {
       throw new Error('invalid index');
     }
     let node: any;
-    for (let i = 0; i <= index - 1; i++) {
+    for (let i = 0; i <= index; i++) {
       if (i === 0) {
         node = this.head;
       } else node = node.next;
