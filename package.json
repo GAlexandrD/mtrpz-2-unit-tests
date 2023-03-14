@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npx tsc --project tsconfig.build.json && node ./dist/index.js",
     "test": "jest"
   },
   "keywords": [],
