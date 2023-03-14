@@ -65,6 +65,10 @@ export class List {
       returnValue = this.head.value;
       this.tail.next = this.head.next;
       this.head = this.tail.next;
+      if (this.length() === 1) {
+        this.tail = null;
+        this.head = null;
+      }
     }
     let node: any;
     for (let i = 0; i < index; i++) {
@@ -156,10 +160,10 @@ export class List {
   }
 
   extend(list: List): void {
-    if(!list.head || !list.tail) return;
+    if (!list.head || !list.tail) return;
     let node: Node = list.head;
     for (let i = 0; i < list.length(); i++) {
-      if(i === 0) node = list.head;
+      if (i === 0) node = list.head;
       else node = node.next;
       this.append(node.value);
     }
