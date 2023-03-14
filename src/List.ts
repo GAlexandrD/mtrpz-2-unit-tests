@@ -124,7 +124,6 @@ export class List {
       prev = node;
       node = tmp;
     }
-    console.dir(this, { depth: 2 });
   }
 
   findFirst(element: Character): number {
