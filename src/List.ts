@@ -16,12 +16,16 @@ export class List {
   }
 
   insert(element: Character, index: number): void {
-    this.validateIndex(index);
+    if(index < 0 || index > this.length()){
+      throw new Error('invalid index');
+    };
     this.elements.splice(index, 0, element);
   }
 
   delete(index: number): Character {
-    this.validateIndex(index);
+    if(index < 0 || index >= this.length()){
+      throw new Error('invalid index');
+    };
     const returnValue = this.elements[index];
     this.elements.splice(index, 1);
     return returnValue;
@@ -36,7 +40,9 @@ export class List {
   }
 
   get(index: number): Character {
-    this.validateIndex(index);
+    if(index < 0 || index >= this.length()){
+      throw new Error('invalid index');
+    };
     return this.elements[index];
   }
 
@@ -62,14 +68,5 @@ export class List {
 
   extend(list: List): void {
     this.elements.push(...list.elements);
-  }
-
-  private validateIndex(index: number) {
-    if (index < 0) {
-      throw new Error('index cannot be less than 0');
-    }
-    if (index >= this.elements.length) {
-      throw new Error('index cannot be more than list lenght');
-    }
   }
 }
